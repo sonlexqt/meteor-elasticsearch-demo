@@ -6,8 +6,10 @@ Meteor.startup(function() {
             "Linh",
             "Hau",
             "Hao",
-            "Dan",
-            "Cuong"
+            "Cuong",
+            "Hoan",
+            "Khiem",
+            "Phuong"
         ],
         last_names = ["Vo Hoang Manh",
             "Truong Viet",
@@ -16,8 +18,11 @@ Meteor.startup(function() {
             "Duong Khoi",
             "Nguyen Le Trung",
             "Tang Cong",
-            "Vu",
-            "Nguyen Huu"
+            "Nguyen Huu",
+            "Nguyen Vu",
+            "Huynh Cong",
+            "Trinh Vinh",
+            "Nguyen Hai"
         ];
     var categories = [
         "Web Developer",
@@ -25,10 +30,12 @@ Meteor.startup(function() {
         "Game Developer",
         "Designer",
         "Accountant",
-        "Tester"
+        "Tester",
+        "Football Player",
+        "Karaoke Singer",
+        "Dancer"
     ];
     if (Players.find().count() === 0) {
-        // one hunderd thousand docs :O
         for (var i = 0; i < 10 * 1000; i++) {
             console.log(i + ' doc created');
             Players.insert({
