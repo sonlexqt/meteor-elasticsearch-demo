@@ -1,0 +1,25 @@
+<template name="leaderboard">
+    <div class="search-input">
+        {{> esInput index="index-players" id="search" placeholder="Search players..." convertnumber=true }}
+    </div>
+
+    {{#ifEsInputIsEmpty index="index-players"}}
+        <div>Search for Players</div>
+    {{/ifEsInputIsEmpty}}
+
+    {{#ifEsIsSearching index="index-players" id="search" logic="OR" }}
+        <div>Loading...</div>
+    {{else}}
+        <div class="results-wrapper">
+            {{#esEach index="index-players" id="search"}}
+                {{> player}}
+            {{/esEach}}
+        </div>
+
+        {{> esLoadMoreButton index="index-players" id="search" }}
+    {{/ifEsIsSearching}}
+
+    {{#ifEsHasNoResults index="index-players" id="search" logic="OR" }}
+        <div class="no-results">No results found!</div>
+    {{/ifEsHasNoResults}}
+</template>
