@@ -26,4 +26,10 @@ Template.leaderboard.created = function () {
     instance.on('currentValue', function (val) {
         console.log('The user searches for ' + val);
     });
+
+    instance.on('searchResults', function (arr){
+        Template.playersRes.results = arr;
+    });
 };
+
+

@@ -32,7 +32,7 @@ Meteor.startup(function() {
         for (var i = 0; i < 10 * 1000; i++) {
             console.log(i + ' doc created');
             Players.insert({
-                name: Random.choice(first_names) + ' ' + Random.choice(last_names),
+                name: Random.choice(last_names) + ' ' + Random.choice(first_names),
                 score: Math.floor(Random.fraction() * 1000 / Random.fraction() / 100),
                 category: Random.choice(categories)
             });

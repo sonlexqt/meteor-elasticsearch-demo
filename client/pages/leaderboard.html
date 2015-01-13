@@ -11,9 +11,11 @@
         <div>Loading...</div>
     {{else}}
         <div class="results-wrapper">
-            {{#esEach index="index-players" id="search"}}
-                {{> player}}
-            {{/esEach}}
+            <!--{{#esEach index="index-players" id="search"}}-->
+            <!--{{/esEach}}-->
+            <ul>
+                {{> playersRes}}
+            </ul>
         </div>
 
         {{> esLoadMoreButton index="index-players" id="search" }}
@@ -22,4 +24,12 @@
     {{#ifEsHasNoResults index="index-players" id="search" logic="OR" }}
         <div class="no-results">No results found!</div>
     {{/ifEsHasNoResults}}
+</template>
+
+<template name="playersRes">
+    {{#each results}}
+        <li>
+            Name: <b>{{name}}</b> - Position: <b>{{category}}</b> - Score:<b>{{score}}</b>
+        </li>
+    {{/each}}
 </template>
